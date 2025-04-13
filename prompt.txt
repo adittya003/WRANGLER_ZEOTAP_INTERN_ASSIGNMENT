@@ -1,0 +1,60 @@
+1. How to add a new lexer token in ANTLR for units like KB, MB, ms, and seconds?
+2. What are the correct regex patterns for byte sizes like 10KB, 1.5MB in ANTLR lexer rules?
+3. How to write a parser rule to accept BYTE_SIZE and TIME_DURATION as arguments in ANTLR grammar?
+4. After modifying Directives.g4, how to regenerate ANTLR Java files using Maven in the Wrangler project?
+5. Getting "no viable alternative at input '10KB'" – how to fix ANTLR grammar to correctly parse byte units?
+6. What is the correct place in CDAP Wrangler to add a new Token type like BYTE_SIZE and TIME_DURATION?
+7. How to create a custom Token class in Java that parses values like "10KB" and returns it as long bytes?
+8. How to handle lowercase and uppercase units (e.g., "kb" vs "KB") robustly inside a Java parser class?
+9. In ByteSize.java, how to throw a meaningful error for unsupported units like "10XY"?
+10. What's the best way to convert string values with decimals like "1.5MB" to long bytes accurately?
+11. In TimeDuration.java, how to handle both "1.5s" and "1500ms" and convert to nanoseconds?
+12. While parsing units, how to ensure consistent conversion – e.g., always use 1024 for KB to B?
+13. How to write a test case that ensures "1.5MB" is parsed into 1572864 bytes?
+14. How to add test coverage for malformed input like "100" (no unit), or "abcKB"?
+15. Getting NullPointerException during visitByteSizeArg – how to debug context.getText() properly?
+16. Where to define visitByteSizeArg and visitTimeDurationArg in Wrangler’s grammar parsing logic?
+17. How to safely cast ParserRuleContext to ByteSizeArgContext in visitor without ClassCastException?
+18. In aggregate directive, how to catch and log invalid values like negative durations or unparseable strings?
+19. What's the best way to integrate a new directive like `aggregate-stats` into existing directive system in Wrangler?
+20. How to test directive aggregation logic with null or missing values in byte/time columns?
+21. How to modify the UsageDefinition to accept both mandatory and optional arguments with defaults?
+22. How to write assertion tests for aggregate results with small floating point differences (use delta)?
+23. How to add meaningful error messages for each failure case while parsing recipe tokens?
+24. How to check if a token is instance of ByteSize or TimeDuration inside the directive safely?
+25. How to simulate a full recipe test with TestingRig and check output rows programmatically?
+26. How to mock ExecutorContext or Store for testing aggregation logic in isolation?
+27. Where to commit ByteSize.java and TimeDuration.java so that Wrangler can compile without classpath issues?
+28. How to prevent ANTLR from consuming invalid units by accident (e.g., "10kk")?
+29. What naming conventions are best for unit-safe parsing utilities in Java?
+30. What's the best way to clean up test cases after verifying temporary Row objects?
+31. How to use NumberFormat or BigDecimal to handle decimal byte sizes precisely?
+32. How to differentiate between "1m" as minutes and "1MB" as megabytes in a grammar safely?
+33. How to define BYTE_UNIT and TIME_UNIT fragments in ANTLR with minimal ambiguity?
+34. How to define BYTE_SIZE so that it doesn’t conflict with existing integer or float rules?
+35. How to apply case-insensitive matching in ANTLR grammar?
+36. How to log token parsing errors without crashing the pipeline execution?
+37. What’s the best way to handle overflow or extremely large values like “10TB” in ByteSize.java?
+38. How to store intermediate values in ExecutorContext during aggregation across rows?
+39. Why does AntlrLexer throw a runtime exception for "0.5 KB" with a space?
+40. How to trim whitespace from token inputs before parsing in ByteSize/TimeDuration?
+41. How to implement support for optional arguments like “output_unit” in a directive?
+42. What are the best practices for naming directive arguments in UsageDefinition?
+43. How to structure JUnit tests for a custom directive that modifies multiple columns?
+44. How to chain multiple aggregate directives in a single recipe for testing?
+45. How to compare floating-point values in test cases with precision tolerance?
+46. How to build Wrangler with only api/core modules during local testing?
+47. How to detect and recover gracefully if input column has a null or empty value?
+48. How to throw a custom DirectiveExecutionException with helpful user error message?
+49. How to print debug logs inside directive during aggregation phase?
+50. How to support both total and average in the same directive via optional arg?
+51. How to enforce required arguments in define() method of a directive?
+52. How to allow flexible column ordering in directive argument parsing?
+53. How to ensure compatibility with old recipes after adding new tokens?
+54. How to safely test for negative or zero durations in aggregation logic?
+55. How to reuse common unit-parsing utilities across ByteSize and TimeDuration?
+56. How to gracefully fallback if unit suffix is missing or incorrect in a value?
+57. How to simulate memory-efficient row aggregation with many rows in tests?
+58. What Maven goal ensures all grammar and test classes are rebuilt and fresh?
+59. How to quickly reset Wrangler repo to upstream version to compare diffs?
+60. How to generate a full Git diff summary against original Wrangler repo?
