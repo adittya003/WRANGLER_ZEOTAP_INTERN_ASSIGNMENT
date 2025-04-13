@@ -1,7 +1,3 @@
-Here is a generated `README.md` file for the enhancements you made to the CDAP Wrangler project, focusing on adding support for Byte Size and Time Duration units parsers:
-
----
-
 # CDAP Wrangler - Byte Size and Time Duration Enhancements
 
 ## Overview
